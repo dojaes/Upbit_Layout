@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Upbit Layout Fixer",
+  "version": "1.1.0",
+  "description": "Upbit 웹 레이아웃 재배치",
+  "content_scripts": [
+    {
+      "matches": ["*://upbit.com/*", "*://www.upbit.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.upbit.com/*",
+    "https://api.binance.com/*",
+    "https://fapi.binance.com/*",
+    "https://www.okx.com/*",
+    "https://api.bitget.com/*",
+    "https://api.stock.naver.com/*",
+    "https://finance.daum.net/*",
+    "https://query1.finance.yahoo.com/*",
+    "https://biquote.io/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["logo_Binance.svg", "logo_Okx.svg", "logo_Bitget.svg", "logo_On.svg", "logo_Off.svg"],
+      "matches": ["*://upbit.com/*", "*://www.upbit.com/*"]
+    }
+  ]
+}
